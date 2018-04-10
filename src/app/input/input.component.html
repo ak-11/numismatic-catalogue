@@ -1,0 +1,176 @@
+<!-- <h2 class="page-header">Add Listing</h2> -->
+<div *ngIf="!wasSubmitted">
+<form (submit)="onAddSubmit()" class="form-vertical">
+<legend>Dodaj Nowy Przedmiot!</legend>
+  <div class="form-group">
+    <label class="col-lg-2 control-label">Region</label>
+    <div class="col-lg-10">
+    <input type="text" [(ngModel)]="Region" name="Region" placeholder="Region">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-lg-2 control-label">Miasto Po Polsku</label>
+    <div class="col-lg-10">
+    <input class="form-control" type="text" [(ngModel)]="Miasto_PL" name="Miasto_PL" >
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-lg-2 control-label">Nazwa</label>
+    <div class="col-lg-10">
+    <input class="form-control" type="text" [(ngModel)]="Nazwa" name="Nazwa">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-lg-2 control-label">Emitent</label>
+    <div class="col-lg-10">
+    <input class="form-control" type="text" [(ngModel)]="Emitent" name="Emitent" >
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-lg-2 control-label">Data Wejścia</label>
+    <div class="col-lg-10">
+    <input class="form-control" type="text" [(ngModel)]="Data_wejscia" name="Data_wejscia" >
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-lg-2 control-label">Data Wyjścia</label>
+    <div class="col-lg-10">
+    <input class="form-control" type="text" [(ngModel)]="Data_wyjscia" name="Data_wyjscia" >
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-lg-2 control-label">Typ</label>
+    <div class="col-lg-10">
+    <input class="form-control" type="text" [(ngModel)]="Typ" name="Typ" >
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-lg-2 control-label">Nominał</label>
+    <div class="col-lg-10">
+    <input class="form-control" type="text" [(ngModel)]="Nominal" name="Nominal" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-lg-2 control-label">Waluta</label>
+    <div class="col-lg-10">
+    <input class="form-control" type="text" [(ngModel)]="Waluta" name="Waluta" >
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-lg-2 control-label">Numer</label>
+    <div class="col-lg-10">
+    <input class="form-control" type="text" [(ngModel)]="Numer" name="Numer" >
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-lg-2 control-label">Seria</label>
+    <div class="col-lg-10">
+    <input class="form-control" type="text" [(ngModel)]="Seria" name="Seria" >
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-lg-2 control-label">Stan (I- to V+ or ?)</label>
+    <div class="col-lg-10">
+    <input class="form-control" type="text" [(ngModel)]="Stan" name="Stan" >
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-lg-2 control-label">Numer Katalogowy DN</label>
+    <div class="col-lg-10">
+    <input class="form-control" type="text" [(ngModel)]="NumKat_DN" name="NumKat_DN" >
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-lg-2 control-label">DN Stan 1</label>
+    <div class="col-lg-10">
+    <input class="form-control" type="text" [(ngModel)]="DN_stan1" name="DN_stan1" >
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-lg-2 control-label">DN Stan 3</label>
+    <div class="col-lg-10">
+    <input class="form-control" type="text" [(ngModel)]="DN_stan3" name="DN_stan3" >
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-lg-2 control-label">Numer Katalogowy Podczaski</label>
+    <div class="col-lg-10">
+    <input class="form-control" type="text" [(ngModel)]="NumKat_Podczaski" name="NumKat_Podczaski" >
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-lg-2 control-label">Podczaski Stan 1</label>
+    <div class="col-lg-10">
+    <input class="form-control" type="text" [(ngModel)]="Podczaski_stan1" name="Podczaski_stan1" >
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-lg-2 control-label">Podczaski Stan 3</label>
+    <div class="col-lg-10">
+    <input class="form-control" type="text" [(ngModel)]="Podczaski_stan3" name="Podczaski_stan3" >
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-lg-2 control-label">Numer Katalogowy Tieste</label>
+    <div class="col-lg-10">
+    <input class="form-control" type="text" [(ngModel)]="NumKat_Tieste" name="NumKat_Tieste" >
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-lg-2 control-label">Tieste Stan 1</label>
+    <div class="col-lg-10">
+    <input class="form-control" type="text" [(ngModel)]="Tieste_stan1" name="Tieste_stan1" >
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-lg-2 control-label">Tieste Stan 3</label>
+    <div class="col-lg-10">
+    <input class="form-control" type="text" [(ngModel)]="Tieste_stan3" name="Tieste_stan3" >
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-lg-2 control-label">Cena PLN</label>
+    <div class="col-lg-10">
+    <input class="form-control" type="text" [(ngModel)]="Cena_PLN" name="Cena_PLN" >
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-lg-2 control-label">Cena Euro</label>
+    <div class="col-lg-10">
+    <input class="form-control" type="text" [(ngModel)]="Cena_Euro" name="Cena_Euro" >
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-lg-2 control-label">Uwagi</label>
+    <div class="col-lg-10">
+    <input class="form-control" type="text" [(ngModel)]="uwagi" name="uwagi" >
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-lg-2 control-label">Właściciel( Twój email )</label>
+    <div class="col-lg-10">
+    <input class="form-control" type="text" [(ngModel)]="Uzytkownik" name="Uzytkownik" >
+    </div>
+  </div>
+  <div class="form-group">
+     <div class="col-lg-10 col-lg-offset-2">
+       <button type="reset" class="btn btn-default">Cofnij</button>
+       <button type="submit" class="btn btn-primary">Dodaj</button>
+     </div>
+   </div>
+
+</form>
+</div>
+
+<div *ngIf="wasSubmitted">
+  <h2>Twój Przedmiot Został Dodany Pomyślnie<br></h2>
+  <a [routerLink]="['/your-collection']">Powróć do Swojej Kolekcji</a>
+</div>

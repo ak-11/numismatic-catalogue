@@ -1,0 +1,178 @@
+<div *ngIf="user?.uid;else loginBox">
+  <div style="text-align:right"><button (click)="logout()"class="btn btn-primary btn-margin">Wyloguj się</button></div>
+  <div *ngIf="isLoggedIn()">
+  <div style="text-align:center">
+    <h4 class="heading2">
+      Opis Przedmiotu
+    </h4>
+    <table class="table table-hover">
+    <thead>
+      <tr>
+
+        <th>Parametr</th>
+        <th>Wartość</th>
+
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr >
+        <td>Region</td>
+        <td>{{Region}}</td>
+      </tr>
+      <tr >
+        <td>Miasto_PL</td>
+        <td>{{Miasto_PL}}</td>
+      </tr>
+      <tr >
+        <td>Nazwa</td>
+        <td>{{Nazwa}}</td>
+      </tr>
+      <tr >
+        <td>Emitent</td>
+        <td>{{Emitent}}</td>
+      </tr>
+
+      <tr >
+        <td>Data_wejscia</td>
+        <td>{{Data_wejscia}}</td>
+      </tr>
+
+      <tr >
+        <td>Data_wyjscia</td>
+        <td>{{Data_wyjscia}}</td>
+      </tr>
+
+      <tr >
+        <td>Typ</td>
+        <td>{{Typ}}</td>
+      </tr>
+
+      <tr >
+        <td>Nominal</td>
+        <td>{{Nominal}}</td>
+      </tr>
+
+      <tr >
+        <td>Waluta</td>
+        <td>{{Waluta}}</td>
+      </tr>
+
+      <tr >
+        <td>Seria</td>
+        <td>{{Seria}}</td>
+      </tr>
+
+      <tr >
+        <td>Stan</td>
+        <td>{{Stan}}</td>
+      </tr>
+
+      <tr >
+        <td>NumKat_DN</td>
+        <td>{{NumKat_DN}}</td>
+      </tr>
+
+      <tr >
+        <td>DN_stan1</td>
+        <td>{{DN_stan1}}</td>
+      </tr>
+
+      <tr >
+        <td>DN_stan3</td>
+        <td>{{DN_stan3}}</td>
+      </tr>
+
+      <tr >
+        <td>NumKat_Podczaski</td>
+        <td>{{NumKat_Podczaski}}</td>
+      </tr>
+
+      <tr >
+        <td>Podczaski_stan1</td>
+        <td>{{Podczaski_stan1}}</td>
+      </tr>
+
+      <tr >
+        <td>Podczaski_stan3</td>
+        <td>{{Podczaski_stan3}}</td>
+      </tr>
+
+      <tr >
+        <td>NumKat_Tieste</td>
+        <td>{{NumKat_Tieste}}</td>
+      </tr>
+
+      <tr >
+        <td>Tieste_stan1</td>
+        <td>{{Tieste_stan1}}</td>
+      </tr>
+
+      <tr >
+        <td>Tieste_stan3</td>
+        <td>{{Tieste_stan3}}</td>
+      </tr>
+
+      <tr >
+        <td>Cena_PLN</td>
+        <td>{{Cena_PLN}}</td>
+      </tr>
+
+      <tr >
+        <td>Cena_Euro</td>
+        <td>{{Cena_Euro}}</td>
+      </tr>
+
+      <tr >
+        <td>uwagi</td>
+        <td>{{uwagi}}</td>
+      </tr>
+
+      <tr >
+        <td>Uzytkownik</td>
+        <td>{{Uzytkownik}}</td>
+      </tr>
+
+</tbody>
+</table>
+</div>
+<div *ngIf="authorised">
+      <button [routerLink]="['/edit']" [queryParams]="{ id : this.id}" class="btn btn-default">Edytuj</button>
+      <button [routerLink] ="['/your-collection']" (click)="deleteItem(this.id)" class="btn btn-primary">Usuń Przedmiot</button>
+</div>
+  </div>
+</div>
+
+<ng-template #loginBox >
+  <div style="text-align:right">
+    <button (click)="loginWithGoogle()" class="btn btn-primary btn-margin" style="margin-bottom:20px">Zaloguj się z Google</button>
+  </div>
+  <div style="text-align:right"><button (click)="login1()" class="btn btn-primary btn-margin">Zaloguj się przez email</button></div>
+  <div style="text-align:right"><button (click)="signup1()" class="btn btn-primary btn-margin">Zarejestruj się</button></div>
+
+  <div class="form-group" *ngIf= "login">
+    <label class="control-label" for="focusedInput" style="text-align:right"><h6 style="color:green">    </h6></label>
+    <input class="form-control" id="focusedInput" type="text" [(ngModel)]="mail" (change)="onSubmitEmail(mail)" placeholder="Wpisz Email">
+
+    <label class="control-label" for="focusedInput" style="text-align:right"><h6 style="color:green">    </h6></label>
+    <input class="form-control" id="focusedInput" type="text" [(ngModel)]="password" (change)="onSubmitPass(password)" placeholder="Wpisz Hasło">
+    <button (click)="loginWithEmail()"class="btn btn-primary btn-margin"style="margin-top:120px">Zaloguj się</button>
+  </div>
+
+  <div class="form-group" *ngIf= "signup">
+    <label class="control-label" for="focusedInput" style="text-align:right"><h6 style="color:green">    </h6></label>
+    <input class="form-control" id="focusedInput" type="text" [(ngModel)]="mail" (change)="onSubmitEmail(mail)" placeholder="Wpisz Email">
+
+    <label class="control-label" for="focusedInput" style="text-align:right"><h6 style="color:green">    </h6></label>
+    <input class="form-control" id="focusedInput" type="text" [(ngModel)]="password" (change)="onSubmitPass(password)" placeholder="Wpisz Hasło">
+    <button (click)="signUp()"class="btn btn-primary btn-margin"style="margin-top:120px">Zarejestruj się</button>
+  </div>
+
+<div style="text-align:center">
+    <div class="alert alert-danger" >Nie Jesteś Zalogowany.</div>
+    <h6>
+      Zaloguj Się By Zobaczyć Przedmiot!
+    </h6>
+</div>
+
+</ng-template>

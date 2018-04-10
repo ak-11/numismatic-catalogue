@@ -1,0 +1,76 @@
+
+<div class="container" text-align= "right">
+  <h4 style="margin-top: 20px">Cały Katalog w Naszej Bazie Danych </h4>
+
+
+
+
+<div class="form-group" style="float:right">
+  <label class="control-label" style="text-align:right"><h6 style="color:green"> Przefiltruj Bazę Danych  </h6></label>
+  <select [(ngModel)]="property" (change)="onSubmitProperty(property)" >
+   <option value="Region">Region</option>
+   <option value="Miasto_PL">Miasto PL</option>
+   <option value="Emitent">Emitent</option>
+   <option value="Typ">Typ</option>
+   <option value="Nominal">Nominał</option>
+   <option value="Waluta">Waluta</option>
+   <option value="Numer">Numer</option>
+   <option value="Seria">Seria</option>
+   <option value="Stan">Stan</option>
+ </select>
+
+
+  <label class="control-label" for="focusedInput" style="text-align:right"><h6 style="color:green">    </h6></label>
+  <input class="form-control" id="focusedInput" type="text" [(ngModel)]="rule" (change)="onSubmitRule(rule)" placeholder="Wpisz Wartość">
+</div>
+
+  <div class="form-group" style="float:left">
+  <button (click)= "reset()"class="btn btn-primary btn-margin" style="margin-top:120px">Powrót do całości</button>
+  <button (click)="filterExact()"class="btn btn-primary btn-margin"style="margin-top:120px">Nałóż Filtr</button>
+</div>
+
+
+
+
+  <table class="table table-hover">
+  <thead>
+    <tr>
+
+      <th>Region</th>
+      <th>Miasto PL</th>
+      <th>Emitent</th>
+      <th>Typ</th>
+      <th>Nominał</th>
+      <th>Waluta</th>
+      <th>Numer</th>
+      <th>Seria</th>
+      <th>Stan</th>
+      <th>Wyświetl</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of items | async">
+      <td><a (click)= "findRegion(this.item.Region)">{{ item.Region }}</a></td>
+      <td><a (click)= "findMiasto(this.item.Miasto_PL)">{{ item.Miasto_PL }}</a></td>
+      <td><a (click)= "findEmitent(this.item.Emitent)">{{ item.Emitent }}</a></td>
+      <td><a (click)= "findTyp(this.item.Typ)"> {{ item.Typ }}</a></td>
+      <td><a (click)= "findNominal(this.item.Nominal)">{{ item.Nominal }}</a></td>
+      <td><a (click)= "findWaluta(this.item.Waluta)">{{ item.Waluta }}</a></td>
+      <td>{{item.Numer}}</td>
+      <td>{{item.Seria}}</td>
+      <td>{{item.Stan}}</td>
+      <td><a [routerLink]="['/display']" [queryParams]="{ id : this.item.$key}">Wyświetl</a></td>
+    </tr>
+
+  </tbody>
+</table>
+  <!-- <ul >
+   <li *ngFor="let item of items | async">
+    <a [routerLink]="['/display']" [queryParams]="{ id : this.item.Numer}"> ✘ </a><a (click)= "findRegion(this.item.Region)">{{ item.Region }}</a>,<a (click)= "findMiasto(this.item.Miasto_PL)">{{ item.Miasto_PL }}</a>
+    , <a (click)= "findEmitent(this.item.Emitent)">{{ item.Emitent }}</a>,<a (click)= "findTyp(this.item.Typ)"> {{ item.Typ }}</a>
+    , <a (click)= "findNominal(this.item.Nominal)">{{ item.Nominal }}</a>,<a (click)= "findWaluta(this.item.Waluta)">{{ item.Waluta }}</a>,
+    {{ item.Numer }}, {{ item.Seria }}, {{ item.Stan }}
+   </li>
+ </ul> -->
+</div>

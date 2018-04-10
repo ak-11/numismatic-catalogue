@@ -1,0 +1,26 @@
+<!-- <h5>Przeszukaj Naszą Bazę Danych</h5>
+<p> Wpisz miasto, przedmiotu, który chcesz znaleźć.</p>
+<input type="text" (keydown)="search($event)" placeholder="Wpisz miasto, które chcesz wyszukać..." class="input"> -->
+<div class="form-group" style="float:right">
+  <label class="control-label" for="focusedInput" style="text-align:right"><h6 style="color:green">Wyszukaj Według Miasta</h6></label>
+  <input class="form-control" id="focusedInput" type="text" (keydown)="search($event)" placeholder="Wpisz miasto, które chcesz wyszukać...">
+</div>
+<hr>
+<div *ngFor="let item of items">
+  <a [routerLink]="['/display']" [queryParams]="{ id : this.item.$key}" (click)="clicked()">
+  {{ item.Region }}, {{ item.Miasto_PL }}, {{ item.Emitent }}, {{ item.Typ }},
+  {{ item.Nominal }}, {{ item.Waluta }}, {{ item.Numer }}</a>
+</div>
+<div *ngIf="items?.length < 1">
+  <div *ngIf="!wasClicked">
+  <hr>
+  <div class="alert alert-danger" >Nie Znaleziono Żadnego Przedmiotu</div>
+</div>
+</div>
+
+<div *ngIf="wasClicked">
+  <hr>
+  <p>
+Wyszukaj!
+  </p>
+</div>

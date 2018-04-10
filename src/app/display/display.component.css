@@ -1,0 +1,15 @@
+p{
+  text-align: left;
+  margin-left: 20px;
+  color: brown;
+}
+ul li{
+  list-style-type: none;
+  list-style-position: outside;
+  padding-left: 20 px;
+  text-align: left;
+}
+
+button{
+  margin-bottom:20px;
+}

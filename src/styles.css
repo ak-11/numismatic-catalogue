@@ -1,0 +1,227 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+/* unvisited link */
+a:link {
+    color: black;
+}
+a{
+  color: black;
+}
+
+/* visited link */
+/*a:visited {
+    color: green;
+}*/
+
+/* mouse over link */
+a:hover {
+    color: green;
+}
+
+/* selected link */
+a:active {
+    color: green;
+}
+.router-link-active {
+	color: #000;
+	font-weight: bold;
+}
+
+
+/*body{
+  font-family: 'Oswald', sans-serif;
+  font-size: 15px;
+  line-height: 22px;
+  color: #364;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1920px;
+
+}
+
+#container{
+  width: 100%;
+  max-width: 1345px;
+  max-height: none;
+  margin: 0 auto;
+  padding: 0;
+  background-color: #d5e4e4;
+}
+
+a{
+  text-decoration: none;
+  font-size: 15px;
+  line-height: 22px;
+  color: #364;
+  cursor: pointer;
+
+}
+
+a:hover{
+  color: #592227;
+}
+
+a,
+a:hover{
+  -webkit-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+header{
+  font-size: 25px;
+  font-family: 'Oswald', sans-serif;
+  display: block;
+  width: 100%;
+  height: 100px;
+  background-color: #b6d4d5;
+  position: relative;
+}
+
+header .logo img{
+  position: absolute;
+  left: 0px;
+  top: 42px;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+h1{
+  font-family: 'Gloria Hallelujah', sans-serif;
+  font-style: oblique;
+  color: #364;
+  position: inherit;
+  text-align: left;
+  margin: 0 20px 20px 20px ;
+  padding: 20px;
+  display: block;
+}
+
+h2{
+  font-size: 25px;
+  font-family: 'Oswald', sans-serif;
+  display: block;
+  text-align: left;
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  margin: 0 0 0 20px ;
+
+}
+
+.heading2{
+  position: inherit;
+}
+
+h3{
+  font-size: 15px;
+  display: block;
+  width: 100%;
+  position: inherit;
+}
+
+nav{
+  display: inline-block;
+  width: 100%;
+  font-size: 0;
+  line-height: 0;
+  margin: 0 auto;
+  padding: 0;
+  background: #592227;
+  color: #3f1f87;
+}
+
+nav,
+nav ul{
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li{
+  display: inline;
+  float: left;
+  margin: 0 5px 0 0 ;
+}
+
+nav ul li a{
+  display: block;
+  font-size: 16px;
+  line-height: normal;
+  text-align: center;
+  color: #d5e4e4;
+  padding: 15px 20px;
+}
+
+nav ul li a:hover{
+  background: #d5e4e4;
+  color: #592227;
+}
+
+#container .main {
+  display: block;
+  text-align: left;
+  width: 75%;
+  margin: 30px 0;
+  padding:0 10px;
+}
+
+footer{
+  background-color: #b6d4d5;
+  color: #592227;
+  min-height: 50px;
+  text-align: right;
+  padding-right: 10px;
+  padding-top: 30px;
+}
+
+@media only screen and (max-width: 1345px) {
+  #container{
+    width: auto;
+    margin: 0 2%;
+
+  }
+}
+
+
+button {
+
+	-moz-box-shadow:inset 0px 1px 0px 0px #dcecfb;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #dcecfb;
+	box-shadow:inset 0px 1px 0px 0px #dcecfb;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #bddbfa), color-stop(1, #80b5ea));
+	background:-moz-linear-gradient(top, #bddbfa 5%, #80b5ea 100%);
+	background:-webkit-linear-gradient(top, #bddbfa 5%, #80b5ea 100%);
+	background:-o-linear-gradient(top, #bddbfa 5%, #80b5ea 100%);
+	background:-ms-linear-gradient(top, #bddbfa 5%, #80b5ea 100%);
+	background:linear-gradient(to bottom, #bddbfa 5%, #80b5ea 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#bddbfa', endColorstr='#80b5ea',GradientType=0);
+	background-color:#bddbfa;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #84bbf3;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Times New Roman;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #528ecc;
+}
+button:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #80b5ea), color-stop(1, #bddbfa));
+	background:-moz-linear-gradient(top, #80b5ea 5%, #bddbfa 100%);
+	background:-webkit-linear-gradient(top, #80b5ea 5%, #bddbfa 100%);
+	background:-o-linear-gradient(top, #80b5ea 5%, #bddbfa 100%);
+	background:-ms-linear-gradient(top, #80b5ea 5%, #bddbfa 100%);
+	background:linear-gradient(to bottom, #80b5ea 5%, #bddbfa 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#80b5ea', endColorstr='#bddbfa',GradientType=0);
+	background-color:#80b5ea;
+}
+button:active {
+	position:relative;
+	top:1px;
+}*/
